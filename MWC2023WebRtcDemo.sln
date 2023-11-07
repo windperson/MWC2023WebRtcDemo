@@ -11,15 +11,37 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{7D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{3B5BF9CA-9C3F-4815-8F82-8F75EE84B175}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{A88D45E0-3009-4B93-B034-7E3C0DEBA982}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{A88D45E0-3009-4B93-B034-7E3C0DEBA982}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRtcMauiApp", "src\App\MAUI\WebRtcMauiApp\WebRtcMauiApp.csproj", "{57DE8C26-8884-48D6-94E3-551E848C5A97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedCallUi", "src\Shared\SharedCallUi\SharedCallUi.csproj", "{7DCC0441-A7B9-4F69-98DA-07CD054E6E6A}"
 EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57DE8C26-8884-48D6-94E3-551E848C5A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57DE8C26-8884-48D6-94E3-551E848C5A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57DE8C26-8884-48D6-94E3-551E848C5A97}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{57DE8C26-8884-48D6-94E3-551E848C5A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57DE8C26-8884-48D6-94E3-551E848C5A97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57DE8C26-8884-48D6-94E3-551E848C5A97}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7DCC0441-A7B9-4F69-98DA-07CD054E6E6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DCC0441-A7B9-4F69-98DA-07CD054E6E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DCC0441-A7B9-4F69-98DA-07CD054E6E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DCC0441-A7B9-4F69-98DA-07CD054E6E6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7D23644C-DA89-4600-B73D-527A40300D1B} = {636671D3-0C4E-4D4A-9367-0601BC346E6E}
 		{3B5BF9CA-9C3F-4815-8F82-8F75EE84B175} = {636671D3-0C4E-4D4A-9367-0601BC346E6E}
+		{57DE8C26-8884-48D6-94E3-551E848C5A97} = {A90C0BF0-55CC-4034-8401-FCE20008F7FE}
+		{7DCC0441-A7B9-4F69-98DA-07CD054E6E6A} = {A88D45E0-3009-4B93-B034-7E3C0DEBA982}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6967AC5D-6802-4D51-8E6D-B775BCDEB4EE}
