@@ -1,6 +1,6 @@
 ﻿using Microsoft.JSInterop;
 
-namespace WebRtcWasm.Client.WebRtc;
+namespace WebRtcWasm.Client.Services.WebRtc;
 
 public interface IWebRtcService
 {

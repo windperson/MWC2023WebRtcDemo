@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 using SharedCallUi.Data;
 
-using WebRtcWasm.Client.WebRtc;
+using WebRtcWasm.Client.Services.WebRtc;
 
 namespace WebRtcWasm.Client
 {

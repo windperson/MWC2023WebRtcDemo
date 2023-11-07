@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.JSInterop;
 
-namespace WebRtcWasm.Client.WebRtc
+namespace WebRtcWasm.Client.Services.WebRtc
 {
     public class WebRtcService : IWebRtcService
     {
@@ -29,7 +29,7 @@ namespace WebRtcWasm.Client.WebRtc
             _signalingChannel = signalingChannel;
             var hub = await GetHub();
             await hub.SendAsync("join", signalingChannel);
-            _jsModule = await _jsRuntime.InvokeAsync<IJSObjectReference>( "import", "/js/WebRtcService.cs.js");
+            _jsModule = await _jsRuntime.InvokeAsync<IJSObjectReference>("import", "/js/WebRtcService.cs.js");
             _jsThis = DotNetObjectReference.Create(this);
             await _jsModule.InvokeVoidAsync("initialize", _jsThis);
         }
