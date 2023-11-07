@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.ResponseCompression;
 
+using WebRtcWasm.Server.Hubs;
+
 namespace WebRtcWasm
 {
     public class Program
@@ -9,6 +11,9 @@ namespace WebRtcWasm
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            // For webRtc signaling.
+            builder.Services.AddSignalR();
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();
@@ -37,6 +42,10 @@ namespace WebRtcWasm
 
             app.MapRazorPages();
             app.MapControllers();
+
+            // For webRtc signaling.
+            app.MapHub<MessageHub>("/messagehub");
+
             app.MapFallbackToFile("index.html");
 
             app.Run();

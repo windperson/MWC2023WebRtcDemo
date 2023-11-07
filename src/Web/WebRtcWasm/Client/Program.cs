@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 using SharedCallUi.Data;
 
+using WebRtcWasm.Client.WebRtc;
+
 namespace WebRtcWasm.Client
 {
     public class Program
@@ -14,6 +16,8 @@ namespace WebRtcWasm.Client
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
             builder.Services.AddSingleton<WeatherForecastService>();
+
+            builder.Services.AddScoped<IWebRtcService, WebRtcService>();
 
             await builder.Build().RunAsync();
         }

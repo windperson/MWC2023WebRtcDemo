@@ -1,0 +1,114 @@
+﻿@page "/rtc"
+@using WebRtcWasm.Client.WebRtc
+@inject IJSRuntime JsRuntime
+@inject IWebRtcService WebRtcService
+
+<h3>WebRTC Demo</h3>
+
+<div class="py-4">
+    <label for="channelInput">Channel</label>
+    <input id="channelInput" @bind="_channelId" />
+    <button id="startButton" @onclick="StartAction" disabled="@_startDisabled">Start</button>
+    <button id="callButton" @onclick="CallAction" disabled="@_callDisabled">Call</button>
+    <button id="hangupButton" @onclick="HangupAction" disabled="@_hangupDisabled">Hang Up</button>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div>
+            <label>Local</label>
+            <video class="col col-lg-6 p-0" id="localVideo" autoplay playsinline></video>
+        </div>
+        <div>
+            <label>Remote</label>
+            <video class="col col-lg-6 p-0" id="remoteVideo" autoplay playsinline></video>
+        </div>
+    </div>
+</div>
+
+@code {
+    private IJSObjectReference? _jsModule;
+    private bool _startDisabled;
+    private bool _callDisabled = true;
+    private bool _hangupDisabled = true;
+
+    private string _channelId = "demo_channel";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _jsModule = await JsRuntime.InvokeAsync<IJSObjectReference>(
+                "import", "./Pages/Rtc.razor.js");
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    private async Task StartAction()
+    {
+        if (string.IsNullOrWhiteSpace(_channelId))
+        {
+            return;
+        }
+
+        if (_jsModule is null)
+        {
+            throw new InvalidOperationException();
+        }
+
+        if (_startDisabled) { return; }
+
+        _startDisabled = true;
+
+        await WebRtcService.Join(_channelId);
+
+        var stream = await WebRtcService.StartLocalStream();
+        await _jsModule.InvokeVoidAsync("setLocalStream", stream);
+
+        WebRtcService.OnRemoteStreamAcquired += OnRemoteStreamAcquired;
+
+        _callDisabled = false;
+    }
+
+    private async void OnRemoteStreamAcquired(object? _, IJSObjectReference e)
+    {
+        if (_jsModule is null)
+        {
+            throw new InvalidOperationException();
+        }
+
+        await _jsModule.InvokeVoidAsync("setRemoteStream", e);
+
+        _callDisabled = true;
+        _hangupDisabled = false;
+        _startDisabled = true;
+
+        StateHasChanged();
+    }
+
+    private async Task CallAction()
+    {
+        if (_callDisabled) { return; }
+
+        _callDisabled = true;
+
+        await WebRtcService.Call();
+
+        _hangupDisabled = false;
+    }
+
+    private async Task HangupAction()
+    {
+        await WebRtcService.Hangup();
+
+        _callDisabled = false;
+        _hangupDisabled = true;
+        _startDisabled = false;
+    }
+
+}
