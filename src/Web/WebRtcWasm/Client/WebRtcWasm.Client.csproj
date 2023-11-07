@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Shared\WebRtcWasm.Shared.csproj" />
+    <ProjectReference Include="..\..\..\Shared\SharedCallUi\SharedCallUi.csproj" />
   </ItemGroup>
 
 </Project>

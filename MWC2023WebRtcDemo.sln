@@ -17,11 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebRtcMauiApp", "src\App\MA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedCallUi", "src\Shared\SharedCallUi\SharedCallUi.csproj", "{7DCC0441-A7B9-4F69-98DA-07CD054E6E6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRtcWasm.Server", "src\Web\WebRtcWasm\Server\WebRtcWasm.Server.csproj", "{448F2B8D-C419-4080-8CAC-D23F4D32AE5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebRtcWasm.Server", "src\Web\WebRtcWasm\Server\WebRtcWasm.Server.csproj", "{448F2B8D-C419-4080-8CAC-D23F4D32AE5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRtcWasm.Client", "src\Web\WebRtcWasm\Client\WebRtcWasm.Client.csproj", "{80236827-43C6-4A6D-8955-08094AB5BDE8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRtcWasm.Shared", "src\Web\WebRtcWasm\Shared\WebRtcWasm.Shared.csproj", "{32244E67-D559-4054-8499-2B5531A54D34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebRtcWasm.Client", "src\Web\WebRtcWasm\Client\WebRtcWasm.Client.csproj", "{80236827-43C6-4A6D-8955-08094AB5BDE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +45,6 @@ Global
 		{80236827-43C6-4A6D-8955-08094AB5BDE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80236827-43C6-4A6D-8955-08094AB5BDE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80236827-43C6-4A6D-8955-08094AB5BDE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{32244E67-D559-4054-8499-2B5531A54D34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32244E67-D559-4054-8499-2B5531A54D34}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32244E67-D559-4054-8499-2B5531A54D34}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32244E67-D559-4054-8499-2B5531A54D34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,7 +56,6 @@ Global
 		{7DCC0441-A7B9-4F69-98DA-07CD054E6E6A} = {A88D45E0-3009-4B93-B034-7E3C0DEBA982}
 		{448F2B8D-C419-4080-8CAC-D23F4D32AE5D} = {3B5BF9CA-9C3F-4815-8F82-8F75EE84B175}
 		{80236827-43C6-4A6D-8955-08094AB5BDE8} = {7D23644C-DA89-4600-B73D-527A40300D1B}
-		{32244E67-D559-4054-8499-2B5531A54D34} = {636671D3-0C4E-4D4A-9367-0601BC346E6E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6967AC5D-6802-4D51-8E6D-B775BCDEB4EE}

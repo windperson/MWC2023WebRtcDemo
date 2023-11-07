@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-using WebRtcMauiApp.Data;
+using SharedCallUi.Data;
 
 namespace WebRtcMauiApp
 {

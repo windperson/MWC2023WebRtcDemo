@@ -1,4 +1,4 @@
-namespace WebRtcMauiApp.Data
+namespace SharedCallUi.Data
 {
     public class WeatherForecastService
     {
