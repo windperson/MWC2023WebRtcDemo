@@ -14,7 +14,7 @@ const offerOptions = {
 const servers = {
     iceServers: [
         {
-            urls: "turn:coturn.myserver.com:3478",
+            urls: "turn:10.0.2.2:3478",
             username: "username",
             credential: "password"
         }
