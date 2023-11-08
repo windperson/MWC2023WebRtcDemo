@@ -50,11 +50,16 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.13" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\Shared\SharedCallUi\SharedCallUi.csproj" />
     </ItemGroup>
+
+    <PropertyGroup>
+        <AndroidHttpClientHandlerType>WebRtcMauiApp.Platforms.Android.DangerousAndroidMessageHandler, WebRtcMauiApp.Platforms.Android.DangerousAndroidMessageHandler</AndroidHttpClientHandlerType>
+    </PropertyGroup>
 
 </Project>
